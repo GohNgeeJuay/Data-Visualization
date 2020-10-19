@@ -1,0 +1,119 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 800,
+  "height": 600,
+  "title": "Country Statistics",
+  "data": {
+    "url": "https://raw.githubusercontent.com/GohNgeeJuay/FIT3179/main/Week10/countries%20of%20the%20world.csv"
+  },
+  "params": [
+    {
+      "name": "Net_migration",
+      "value": -21,
+      "bind": {
+        "input": "range",
+        "min": -21,
+        "max": 25,
+        "step": 1,
+        "name": "Minimum Net Migration: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.PopulationDensitypersquaremile > 0"},
+    {"filter": "datum.NetMigration > Net_migration "}
+  ],
+  "encoding": {
+    "y": {
+      "field": "GDP ($ per capita)",
+      "type": "quantitative",
+      "title": "GPD per capita ($)"
+    },
+    "x": {
+      "field": "PopulationDensitypersquaremile",
+      "type": "quantitative",
+      "axis": {"tickCount": 5},
+      "scale": {"type": "log", "domain": [1, 20000]},
+      "title": "Population Density per square mile"
+    }
+  },
+  "layer": [
+    {
+      "selection": {
+        "Region_highlight": {
+          "type": "multi",
+          "fields": ["Region"],
+          "bind": "legend"
+        }
+      },
+      "mark": "circle",
+      "encoding": {
+        "color": {"field": "Region", "type": "nominal"},
+        "opacity": {
+          "condition": {"selection": "Region_highlight", "value": 0.7},
+          "value": 0.2
+        },
+        "size": {
+          "field": "NetMigration",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [0, 10, 20],
+            "range": [50, 200, 600, 1000]
+          }
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {
+            "field": "PopulationDensitypersquaremile",
+            "type": "quantitative",
+            "format": ",",
+            "title": "Pop. Dens. per sq"
+          },
+          {
+            "field": "GDP ($ per capita)",
+            "type": "quantitative",
+            "format": "$,"
+          },
+          {"field": "Region", "type": "nominal"},
+          {"field": "NetMigration", "type": "quantitative", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Country", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {"test": "datum.NetMigration > 5", "value": 1},
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {
+            "field": "PopulationDensitypersquaremile",
+            "type": "quantitative",
+            "format": ",",
+            "title": "Pop. Dens. per sq"
+          },
+          {
+            "field": "GDP ($ per capita)",
+            "type": "quantitative",
+            "format": "$,"
+          },
+          {"field": "Region", "type": "nominal"},
+          {"field": "NetMigration", "type": "quantitative", "format": ","}
+        ]
+      }
+    }
+  ],
+  "config": {}
+}
