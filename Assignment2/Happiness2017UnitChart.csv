@@ -1,4 +1,4 @@
-ID,Country,Region,HappinessRank2016,HappinessRank,HappinessScore,HappinessDescription,Whiskerhigh,Whiskerlow,Economy..GDP.per.Capita.,Family,Health..Life.Expectancy.,Freedom,Generosity,Trust..Government.Corruption.,Dystopia.Residual
+ID,Country,Region,HappinessRank2016,HappinessRank,HappinessScore,HappinessDescription,Whiskerhigh,Whiskerlow,EconomyGDPperCapita,Family,HealthLifeExpectancy,Freedom,Generosity,TrustGovernmentCorruption,DystopiaResidual
 1,Australia,Australia and New Zealand,9,10,7.28399992,High,7.356651225,7.211348615,1.484414935,1.510041952,0.843886793,0.601607382,0.47769925,0.30118373,2.065210819
 2,New Zealand,Australia and New Zealand,8,8,7.31400013,High,7.379510442,7.248489818,1.405706048,1.548195124,0.816759706,0.61406213,0.500005126,0.382816702,2.046456337
 3,Albania,Central and Eastern Europe,109,109,4.644000053,Medium,4.752464006,4.5355361,0.996192753,0.803685248,0.731159747,0.381498635,0.201312944,0.039864216,1.490441561
