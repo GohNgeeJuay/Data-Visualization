@@ -3,7 +3,7 @@
   "description": "Parallel Coordinates chart",
   "title": {
     "text": "Relationship of countries' happiness with HDI/GINI/Annual Pop. Growth(%)",
-    "fontSize": 25,
+    "fontSize": 20,
     "align": "center",
     "font": "Georgia",
     "color": "#000080"
@@ -67,7 +67,7 @@
       "encoding": {
         "color": {
           "type": "nominal",
-          "legend": {"title": "Happiness Description"},
+          "legend": {"title": "Happiness Description", "labelFontSize": 13, "titleFontSize": 15},
           "field": "HappinessDescription",
           "scale": {
             "domain": ["Low", "Medium", "High"],
