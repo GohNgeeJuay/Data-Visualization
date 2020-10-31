@@ -67,7 +67,7 @@
       "encoding": {
         "color": {
           "type": "nominal",
-          "legend": {"title": "Happiness Description", "labelFontSize": 13, "titleFontSize": 15},
+          "legend": {"title": "Happiness Description", "labelFontSize": 13, "titleFontSize": 15, "orient": "none", "legendX": 525, "legendY": 0},
           "field": "HappinessDescription",
           "scale": {
             "domain": ["Low", "Medium", "High"],
