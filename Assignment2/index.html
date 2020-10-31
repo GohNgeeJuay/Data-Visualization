@@ -86,8 +86,8 @@
      <!-- pure grid group -->
       <div class="header">
         <div class="pure-u-1-1">
-          <h2 style="font-size:20px;">Happiness in different countries worldwide</h1>
-          <p style="font-size:15px; font-weight: 400">Below is a visualization showing the happiness score worldwide. It is a choropleth giving an overview of happiness worldwide</p>
+          <h2 style="font-size:30px;">Happiness in different countries worldwide</h1>
+          <p>Below is a visualization showing the happiness score worldwide. It is a choropleth giving an overview of happiness worldwide</p>
 
         </div>
       </div>
@@ -198,11 +198,24 @@
             <p>Residuals are the unexplained components of the happiness score.</p>
         </div>
       </div>
-               
-         
-
-      
     </div>
+    <!-- end pure grid group -->
+   
+   
+   <!-- pure grid group -->
+      <div class="header">
+        <div class="pure-u-1-1">
+          <h2 style="font-size:30px;">Summary of happiness in different regions</h2>
+          <p>Below is a unit chart showing the level of happiness in different parts of the world</p>
+          <p>The first chart shows the number of countries by region.</p>
+          <p>In the next three charts, each cell represents a country. Overall, many of the subsaharan countries are not too happy, while most of the developed world is happy.</p>
+
+        </div>
+      </div>
+      <div class="pure-u-1-1">
+        <div id="vis8" class="vis-container"></div>
+      </div>
+
     <!-- end pure grid group -->
    
    
@@ -259,6 +272,7 @@
   var specVis5= "ParallelCoordinates.json";
   var specVis6= "RadialPlot.json";
   var specVis7= "PopulationGrowth1.json";
+  var specVis8= "UnitChart.json";
   
 
   vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
@@ -286,6 +300,10 @@
   }).catch(console.error);
   
   vegaEmbed('#vis7', specVis7, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+          
+  vegaEmbed('#vis8', specVis8, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
           
