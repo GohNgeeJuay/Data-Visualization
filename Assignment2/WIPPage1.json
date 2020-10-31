@@ -103,7 +103,7 @@
           "field": "Country",
           "type": "nominal",
           "sort": "y",
-          "axis": {"labelAngle": 0, "labelFont": "Verdana"}
+          "axis": {"labelAngle": -35, "labelFont": "Verdana"}
         },
         "y": {
           "field": "value",
