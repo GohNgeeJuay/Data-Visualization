@@ -31,7 +31,7 @@
   "width": 750,
   "height": 400,
   "encoding": {
-    "color": {"field": "POPGROWTH(%)", "type": "quantitative"},
+    "color": {"field": "POPGROWTH(%)", "type": "quantitative", "legend": {"title": "Pop. Growth (%)"},
     "tooltip": [
       {"field": "properties.NAME", "type": "nominal", "title": "Country"},
       {"field": "POPGROWTH(%)", "type": "quantitative"}
