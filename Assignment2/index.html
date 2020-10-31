@@ -144,7 +144,7 @@
             <h2 style="font-size:30px;"> Population Growth and Happiness</h1>
             <p>Population Growth is the annual changes for the population of a country. It is measured as the change in the population of a country divided by the total population of the country. It is measured as a percentage.</p>
             <p> Do happier countries have higher net increase in population growth? Look to the right and find out.</p>
-            <p>There seems to be a negative correlation! This is unexpected. But the population increase could be due to higher fertility rate in poorer countries. There are numerous reasons why developing countries usually have high fertiliy rate. Click the link below to find out.</p>
+            <p>There seems to be a negative correlation! This is unexpected. But the high population increase could be due to higher fertility rate in poorer countries. There are numerous reasons why developing countries usually have high fertiliy rate. Click the link below to find out.</p>
             <a href="https://www.bbc.co.uk/bitesize/guides/zbswxnb/revision/9">Population, distribution, growth and change by BBC Bitesize</a>
             
           </div>
@@ -154,6 +154,25 @@
         </div>
     </div>
     <!-- end pure grid group -->
+   
+   
+   <!-- pure grid group -->
+      <div class="header">
+        <div class="pure-u-1-1">
+          <h2 style="font-size:30px;">Correlation of HDI, GINI and Population Growth with Happiness</h1>
+          <p> Below is a parallel coordinate plot showing the relationship of happiness with the three factors.</p>
+
+        </div>
+      </div>
+      <div class="pure-u-1-1">
+        <div id="vis5" class="vis-container"></div>
+        <p style="font-size:15px; font-weight: 400; text-align: center">You can filter for different happiness level with the selection or scroll the minimum happiness score to get a specific overview.</p>
+      </div>
+
+    <!-- end pure grid group -->
+   
+   
+   
    
    
    
@@ -204,6 +223,7 @@
   var specVis2= "HDI.json";
   var specVis3= "GINI.json";
   var specVis4= "PopulationGrowth.json";
+  var specVis5= "ParallelCoordinates.json";
   
 
   vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
@@ -219,6 +239,10 @@
   }).catch(console.error);
 
   vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+          
+  vegaEmbed('#vis5', specVis5, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
           
