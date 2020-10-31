@@ -25,7 +25,7 @@
        background-color: lightgray;
      }
      .page{
-       width: 1200px;    
+       width: 1100px;    
        background-color: lightblue;   
        margin: auto;
        padding: 50px;
@@ -41,6 +41,7 @@
       padding-left: 20px;
     }
     .description-left{
+      padding-top: 20px;
       padding-right: 20px;
     }
     .pure-g{
@@ -61,49 +62,53 @@
 
  <div class="page">
 
-   <!-- pure grid group -->
-    <div class="header">
-      <div class="pure-u-1-1">
-        <h1 style="font-size:50px; font-weight: 900, font-family: Georgia; color: #1762FD" > World Happiness</h1>
-        <p style="font-size:20px; font-weight: 500">Exploration of happiness worldwide and factors affecting happiness</p>
+     <!-- pure grid group -->
+      <div class="header">
+        <div class="pure-u-1-1">
+          <h1 style="font-size:50px; font-weight: 900, font-family: Georgia; color: #1762FD" > World Happiness</h1>
+          <p style="font-size:30px; font-weight: 900; color: #1762FD">Exploration of happiness worldwide and factors affecting happiness</p>
+        </div>
       </div>
-    </div>
-  <!-- end pure grid group -->
-   
-   <!-- pure grid group -->
-    <div class="header">
-      <div class="pure-u-1-1">
-        <h2 style="font-size:30px;">What is the World Happiness Report?</h1>
-        <p style="font-size:20px; font-weight: 400">World Hapiness Report is an annual landmark survey of the state of happiness in countries worldwide. </p>
-        <p style="font-size:20px; font-weight: 400">It measures how happy people perceive themselves to be. This survey is conducted by Gallup World Poll. </p>
+    <!-- end pure grid group -->
+
+     <!-- pure grid group -->
+      <div class="header">
+        <div class="pure-u-1-1">
+          <h2 style="font-size:30px;">What is the World Happiness Report?</h1>
+          <p style="font-size:20px; font-weight: 400">World Hapiness Report is an annual landmark survey of the state of happiness in countries worldwide. </p>
+          <p style="font-size:20px; font-weight: 400">It measures how happy people perceive themselves to be. This survey is conducted by Gallup World Poll. </p>
+        </div>
       </div>
-    </div>
+
+     <!-- end pure grid group -->
    
+     <!-- pure grid group -->
+      <div class="header">
+        <div class="pure-u-1-1">
+          <h2 style="font-size:30px;">Happiness in different countries worldwide</h1>
+          <p style="font-size:20px; font-weight: 400">Below is a visualization showing the happiness score worldwide. It is a choropleth giving an overview of happiness worldwide</p>
+
+        </div>
+      </div>
+      <div class="pure-u-1-1">
+        <div id="vis1" class="vis-container"></div>
+        <p style="font-size:15px; font-weight: 400">You can select different countries by clicking on them and holding down the shift button to compare happiness in different years and countries</p>
+      </div>
+
     <!-- end pure grid group -->
    
-   <!-- pure grid group -->
-    <div class="header">
-      <div class="pure-u-1-1">
-        <h2 style="font-size:30px;">Happiness in different countries worldwide</h1>
-        <p style="font-size:20px; font-weight: 400">Below is a visualization showing the happiness score worldwide. It is a choropleth giving an overview of happiness worldwide</p>
-        <p style="font-size:15px; font-weight: 400">You can select different countries by clicking on them and holding down the shift button to compare happiness in different years and countries</p>
-
-      </div>
-    </div>
-    <div class="pure-u-1-1">
-      <div id="vis1" class="vis-container"></div>
-    </div>
-   
-  <!-- end pure grid group -->
-   
-
 
     <!-- pure grid group -->
     <div class="pure-g">
         <div class="pure-u-1-3">
           <div class="description description-left">
-            <h2>This is the first section</h2>
-            <p>The first column is used for description while the next two columns are merged and used for visualisation. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
+            <h2 style="font-size:30px;"> Human Development Index and Happiness</h1>
+            <p>Human Development Index (HDI) is a statistic for assessing countries' development based on a more comprehensive approach compared to economic factors alone These factors are:.</p>
+                <ul>
+                  <li>Health (measured by life expectancy)</li>
+                  <li>Education (measured by mean years of schooling and expected years of schooling)</li>
+                  <li>Standard of Living (measured by Gross National Income (PPP$))</li>
+                  </ul>
           </div>
         </div>
         <div class="pure-u-2-3">
