@@ -124,20 +124,15 @@
     <div class="pure-g">
         <div class="pure-u-1-3">
           <div class="description description-left">
-            <h2 style="font-size:30px;"> Human Development Index and Happiness</h1>
-            <p>Human Development Index (HDI) is a statistic for assessing countries' development based on a more comprehensive approach compared to economic factors alone These factors are:.</p>
-                <ul>
-                  <li>Health (measured by life expectancy)</li>
-                  <li>Education (measured by mean years of schooling and expected years of schooling)</li>
-                  <li>Standard of Living (measured by Gross National Income (PPP$))</li>
-                </ul>
-            <p>Does HDI affect Happiness? Look to the right and find out.</p>
-            <p>There seems to be a positive correlation! Happy countries usually have higher HDI.</p>
+            <h2 style="font-size:30px;"> GINI and Happiness</h1>
+            <p>GINI is a statistic for assessing countries' income distribution. It ranges between 0 and 1, with 0 being total equality and 1 being total inequality.</p>
+            <p> Do countries with more income inquality more unhappy? Look to the right and find out.</p>
+            <p>There seems to be a positive correlation! Happy countries usually have more income equality.</p>
             
           </div>
         </div>
         <div class="pure-u-2-3">
-          <div id="vis2" class="vis-container"></div>
+          <div id="vis3" class="vis-container"></div>
         </div>
     </div>
     <!-- end pure grid group -->
@@ -189,6 +184,7 @@
 <script type="text/javascript">
   var specVis1 = "Page1.json";
   var specVis2= "HDI.json";
+  var specVis3= "GINI.json";
 
   vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -198,7 +194,7 @@
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  vegaEmbed('#vis3', specVis1, {"actions": false}).then(function(result) {
+  vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
