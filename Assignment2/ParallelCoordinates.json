@@ -1,0 +1,124 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "Parallel Coordinates chart",
+  "title": {
+    "text": "Relationship of countries' happiness with HDI/GINI/Annual Pop. Growth(%)",
+    "fontSize": 25,
+    "align": "center",
+    "font": "Georgia",
+    "color": "#000080"
+  },
+  "background": "#f0f8ff",
+  "data": {
+    "url": "https://raw.githubusercontent.com/GohNgeeJuay/FIT3179/main/Assignment2/hdi_human_development_indexCombinedHappiness.csv"
+  },
+  "width": 600,
+  "height": 400,
+  "params": [
+    {
+      "name": "Happiness_selection",
+      "bind": {
+        "input": "select",
+        "options": [null, "Low", "Medium", "High"],
+        "labels": ["Show All", "Low", "Medium", "High"],
+        "name": "Select happiness: "
+      }
+    },
+    {
+      "name": "Happiness_score_above",
+      "value": 2.5,
+      "bind": {
+        "input": "range",
+        "min": 2.5,
+        "max": 7.5,
+        "step": 0.1,
+        "name": "Minimum happiness score"
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum['HappinessDescription']"},
+    {
+      "filter": "Happiness_selection == null || datum.HappinessDescription == Happiness_selection"
+    },
+    {"filter": "datum.Happiness > Happiness_score_above"},
+    {"window": [{"op": "count", "as": "index"}]},
+    {"fold": ["HDI", "GINI", "POPGROWTH(%)"]},
+    {
+      "joinaggregate": [
+        {"op": "min", "field": "value", "as": "min"},
+        {"op": "max", "field": "value", "as": "max"}
+      ],
+      "groupby": ["key"]
+    },
+    {
+      "calculate": "(datum.value - datum.min) / (datum.max-datum.min)",
+      "as": "norm_val"
+    },
+    {"calculate": "(datum.min + datum.max) / 2", "as": "mid"}
+  ],
+  "layer": [
+    {
+      "mark": {"type": "rule", "color": "#000000"},
+      "encoding": {"detail": {"aggregate": "count"}, "x": {"field": "key"}}
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "color": {
+          "type": "nominal",
+          "legend": {"title": "Happiness Description"},
+          "field": "HappinessDescription",
+          "scale": {
+            "domain": ["Low", "Medium", "High"],
+            "range": ["#D81B60", "#3EE443", "#1E88E5"]
+          }
+        },
+        "detail": {"type": "nominal", "field": "index"},
+        "opacity": {"value": 0.4},
+        "x": {"type": "nominal", "field": "key"},
+        "y": {"type": "quantitative", "field": "norm_val", "axis": null},
+        "tooltip": [
+          {"type": "quantitative", "field": "HDI"},
+          {"type": "quantitative", "field": "GINI"},
+          {
+            "type": "quantitative",
+            "field": "POPGROWTH(%)",
+            "title": "Population Growth Yearly (%)"
+          },
+          {"type": "quantitative", "field": "Happiness"}
+        ]
+      }
+    },
+    {
+      "encoding": {"x": {"type": "nominal", "field": "key"}, "y": {"value": 0}},
+      "layer": [
+        {
+          "mark": {"type": "text", "style": "label"},
+          "encoding": {"text": {"aggregate": "max", "field": "max"}}
+        },
+        {
+          "mark": {
+            "type": "tick",
+            "style": "tick",
+            "size": 10,
+            "color": "#000000"
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "axisX": {
+      "domain": false,
+      "labelAngle": 0,
+      "tickColor": "#000000",
+      "title": null
+    },
+    "view": {"stroke": null},
+    "style": {
+      "label": {"baseline": "middle", "align": "right", "dx": -5},
+      "tick": {"orient": "horizontal"}
+    }
+  }
+}
