@@ -9,8 +9,8 @@
     "font": "Georgia",
     "color": "#000080"
   },
-  "width": 600,
-  "height": 500,
+  "width": 500,
+  "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/GohNgeeJuay/FIT3179/main/Assignment2/Happiness2017UnitChart.csv"
   },
