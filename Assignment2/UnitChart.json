@@ -1,0 +1,93 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "description": "A Rectangular Unit-Chart",
+  "background": "#f0f8ff",
+  "width": 800,
+  "height": 400,
+  "title": {
+    "text": "Happiness Proportion by Region",
+    "fontSize": 25,
+    "align": "center",
+    "dx": 500,
+    "font": "Georgia",
+    "color": "#000080"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/GohNgeeJuay/FIT3179/main/Assignment2/Happiness2017UnitChart.csv"
+  },
+  "transform": [
+    {"calculate": "ceil(datum.ID/ 10)", "as": "X"},
+    {"calculate": "datum.ID - (datum.X - 1) *10", "as": "Y"}
+  ],
+  "vconcat": [
+    {
+      "layer": [
+        {
+          "width": 950,
+          "height": 400,
+          "mark": "rect",
+          "encoding": {
+            "x": {"field": "X", "type": "ordinal", "axis": null},
+            "y": {"field": "Y", "type": "ordinal", "axis": null},
+            "color": {"field": "Region", "type": "nominal"},
+            "tooltip": [
+              {"field": "Country", "type": "nominal"},
+              {"field": "Region", "type": "nominal"},
+              {"field": "HappinessScore", "type": "quantitative"},
+              {"field": "HappinessRank", "type": "quantitative"}
+            ]
+          }
+        },
+        {
+          "mark": {"type": "text", "fontSize": 8, "limit": 30},
+          "encoding": {
+            "x": {"field": "X"},
+            "y": {"field": "Y"},
+            "text": {"field": "Country", "type": "nominal"},
+            "tooltip": [
+              {"field": "Country", "type": "nominal"},
+              {"field": "Region", "type": "nominal"},
+              {"field": "HappinessScore", "type": "quantitative"},
+              {"field": "HappinessRank", "type": "quantitative"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "width": 300,
+      "height": 300,
+      "mark": "rect",
+      "encoding": {
+        "column": {
+          "field": "HappinessDescription",
+          "type": "nominal",
+          "title": "Happiness Level",
+          "sort": ["High", "Medium", "Low"]
+        },
+        "x": {"field": "X", "type": "ordinal", "axis": null},
+        "y": {"field": "Y", "type": "ordinal", "axis": null},
+        "color": {
+          "field": "Region",
+          "type": "nominal",
+          "title": "Region",
+          "legend": {
+            "titleFontSize": 15,
+            "titleFont": "Verdana",
+            "titleFontWeight": "normal",
+            "labelFontSize": 12,
+            "labelFont": "Verdana"
+          }
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {"field": "Region", "type": "nominal"},
+          {"field": "HappinessScore", "type": "quantitative"},
+          {"field": "HappinessRank", "type": "quantitative"}
+        ]
+      },
+      "config": {"cell": {"strokeOpacity": 0}}
+    }
+  ],
+  "config": {}
+}
