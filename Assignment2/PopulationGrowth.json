@@ -28,8 +28,8 @@
   "mark": {"type": "geoshape"},
   "projection": {"type": "equalEarth"},
   "autosize": {"type": "fit", "contains": "content"},
-  "width": 700,
-  "height": 500,
+  "width": 750,
+  "height": 400,
   "encoding": {
     "color": {"field": "POPGROWTH(%)", "type": "quantitative"},
     "tooltip": [
