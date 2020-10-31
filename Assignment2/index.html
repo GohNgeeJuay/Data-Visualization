@@ -124,7 +124,7 @@
     <div class="pure-g">
         <div class="pure-u-1-3">
           <div class="description description-left">
-            <h2 style="font-size:30px;"> GINI and Happiness</h2>
+            <h2 style="font-size:30px"> GINI and Happiness</h2>
             <p>GINI is a statistic for assessing countries' income distribution. It ranges between 0 and 1, with 0 being total equality and 1 being total inequality.</p>
             <p> Do countries with more income inquality more unhappy? Look to the right and find out.</p>
             <p>There seems to be a positive correlation! Happier countries usually have more income equality.</p>
@@ -150,16 +150,16 @@
           </div>
         </div>
         <div class="pure-u-2-3">
-          <div id= "vis2" class="vis-container"; style="padding-top: 30px;"></div>
+          <div id= "vis4" class="vis-container"; style="padding-top: 30px;"></div>
           </div>
     </div>
     <!-- end pure grid group -->
    
    
    <!-- pure grid group -->
-      <div class="header">
+     <div class="pure-g">
         <div class="pure-u-1-1">
-          <h2 style="font-size:30px;">Correlation of HDI, GINI and Population Growth with Happiness</h2>
+          <h2 style="font-size:30px; padding-top: 30px">Correlation of HDI, GINI and Population Growth with Happiness</h2>
           <p> Below is a parallel coordinate plot showing the relationship of happiness with the three factors.</p>
 
         </div>
@@ -174,10 +174,9 @@
     
    <!-- pure grid group -->
     <div class="pure-g">
-                       
-                   
+                                 
         <div class="pure-u-1-3">
-          <h2 style="font-size:30px;"> World Happiness Report Statistic</h2>
+          <h2 style= "font-size:30px; padding-top: 30px"> World Happiness Report Statistic</h2>
             <p> The happiness is scored based on respondents ratings. The ratings are comprised by a number of metrics which include:.</p>
                 <ul>
                   <li>GDP per capita</li>
@@ -195,7 +194,7 @@
                        
                        
         <div class="pure-u-2-3">
-          <div id="vis2"  class="vis-container"></div>
+          <div id="vis6"  class="vis-container"></div>
         </div>
                                                
          
@@ -261,6 +260,7 @@
   var specVis3= "GINI.json";
   var specVis4= "PopulationGrowth.json";
   var specVis5= "ParallelCoordinates.json";
+  var specVis6= "RadialPlot.json";
   
 
   vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
@@ -280,6 +280,10 @@
   }).catch(console.error);
           
   vegaEmbed('#vis5', specVis5, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  vegaEmbed('#vis6', specVis6, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
           
