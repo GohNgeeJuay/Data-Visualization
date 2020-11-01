@@ -68,7 +68,7 @@
         "color": {
           "type": "nominal",
           "legend": {
-            "title": "Happiness Level",
+            "title": "Happiness Description",
             "orient": "none",
             "legendX": 590,
             "legendY": 0
