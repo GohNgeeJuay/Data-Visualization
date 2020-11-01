@@ -72,7 +72,7 @@
             "labelFontSize": 13,
             "titleFontSize": 15,
             "orient": "none",
-            "legendX": 520,
+            "legendX": 550,
             "legendY": 0
           },
           "field": "HappinessDescription",
