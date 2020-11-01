@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "description": "Parallel Coordinates chart",
   "title": {
-    "text": "Relationship of countries' happiness with HDI/GINI/Annual Pop. Growth(%)",
+    "text": "Happiness with HDI/GINI/Annual Pop. Growth(%)",
     "fontSize": 20,
     "align": "center",
     "font": "Georgia",
@@ -67,7 +67,14 @@
       "encoding": {
         "color": {
           "type": "nominal",
-          "legend": {"title": "Happiness Description", "labelFontSize": 13, "titleFontSize": 15, "orient": "none", "legendX": 525, "legendY": 0},
+          "legend": {
+            "title": "Happiness Description",
+            "labelFontSize": 13,
+            "titleFontSize": 15,
+            "orient": "none",
+            "legendX": 475,
+            "legendY": 0
+          },
           "field": "HappinessDescription",
           "scale": {
             "domain": ["Low", "Medium", "High"],
