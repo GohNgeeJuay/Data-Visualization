@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "description": "Parallel Coordinates chart",
   "title": {
-    "text": "Happiness with HDI/GINI/Annual Pop. Growth(%)",
+    "text": "Happiness with GINI/HDI/Annual Pop. Growth(%)",
     "fontSize": 20,
     "align": "center",
     "font": "Georgia",
@@ -69,8 +69,6 @@
           "type": "nominal",
           "legend": {
             "title": "Happiness Description",
-            "labelFontSize": 13,
-            "titleFontSize": 15,
             "orient": "none",
             "legendX": 550,
             "legendY": 0
