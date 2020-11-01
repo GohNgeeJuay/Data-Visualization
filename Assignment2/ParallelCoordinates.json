@@ -70,7 +70,7 @@
           "legend": {
             "title": "Happiness Description",
             "orient": "none",
-            "legendX": 550,
+            "legendX": 600,
             "legendY": 0
           },
           "field": "HappinessDescription",
